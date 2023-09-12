@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.mackysoft.serializereference-extensions": {
+      "version": "https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "cdcbbedf21f4ccfc8108a2c893ad073e02c9ff62"
+    },
     "com.unity.addressables": {
       "version": "1.21.17",
       "depth": 0,
@@ -217,16 +224,6 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
-    },
-    "com.unity.visualscripting": {
-      "version": "1.9.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
