@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Ball
+  m_EditorClassIdentifier: 
+  m_GroupName: Ball
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0df58513285636243b3491a3616f8ff7
+  m_SerializeEntries:
+  - m_GUID: c3d25e50c6700ad4c9ec6578187619ac
+    m_Address: Assets/Basketball/BasketballMaterial.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8afad507a790e74da43d775d32ca3b2
+    m_Address: Ball
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4892f5de0e0327c4d973a1123dccde31
+    m_Address: Assets/FakeProjectile.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ae0e4418bcaaf74eb98c5183de9842e
+    m_Address: Assets/Basketball/FakeProjectile Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cb4ec49f99b4b7b4f90a595b3421a371, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9ace1826c980e2e41a61bd0e7c269849, type: 2}
+    - {fileID: 11400000, guid: b02985db0e4a60445a76f170ae930971, type: 2}
