@@ -8,39 +8,52 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 
 [AddTypeMenu("PlayerStates/" + nameof(PlayerThrowingState)), Serializable]
-public class PlayerThrowingState : State
+public class PlayerThrowingState : IState
 {
+    [Header("References")]
+    [SerializeField] private StateHandler stateHandler;
     [SerializeField] private PlayerBallHandler playerBallHandler;
-    [FormerlySerializedAs("fakeBallAssetReference")]
-    [SerializeField]
-    private AssetReference fakeBallReference;
-    [SerializeField] private Vector3 throwDirection;
-    [SerializeField] private float maxThrowingForce = 20f;
-    public ForceMode throwingForceMode;
-    [SerializeField] private GameObject throwingCamera;
     [SerializeField] private PlayerTargetGoal playerTargetGoal;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private GameObject canvasGameObject;
+    [SerializeReference,SubclassSelector] private IAnimationHandler animationHandler;
 
-    [Header("Debug")] private Rigidbody throwingBallRigidbody;
-    [SerializeField] private float throwingForcePercentage = 0;
-    private GameObject fakeBallInstance;
+    [Header("Config")]
+    [SerializeField] private AssetReference fakeBallReference;
+    [SerializeField] private Vector3 throwDirection;
+    [SerializeField] private float throwingForcePercentage = 0.5f;
+    [SerializeField] private float maxThrowingForce = 20f;
+    [SerializeField] private ForceMode throwingForceMode;
+    [SerializeField] private GameObject throwingCamera;
 
+    [Header("Debug")]
+    private GameObject projectileSimulationInstance;
+    private Rigidbody throwingBallRigidbody;
     private PlayerActions playerActions;
     private float valueToPowerUpEachTime = 0.1f;
-    [SerializeField] PlayerStateHandler playerStateHandler;
-    private string stateToReturnOnCancel;
-
-    public override void OnEnterState()
+    private string stateToReturnOnCancel = nameof(PlayerIdleStateWithBall);
+    private string stateToReturnAfterThrowing = nameof(PlayerIdleStateWithoutBall);
+    private Transform previousCamera;
+    private float minimumYDirection = 1;
+    public void OnEnterState()
     {
         playerActions = new PlayerActions();
         playerActions.Enable();
-        var asyncOperationHandler = fakeBallReference.InstantiateAsync();
-        asyncOperationHandler.Completed += HandleLoadedFakeBall;
-        throwingBallRigidbody = playerBallHandler.GetBall().GetComponent<Rigidbody>();
-        throwingCamera.SetActive(true);
         playerActions.ThrowingState.ThrowBall.performed += OnThrowInput;
         playerActions.ThrowingState.DebugThrow.performed += DebugSimulateTrajectory;
         playerActions.ThrowingState.PowerChange.performed += OnPowerInputChanged;
         playerActions.ThrowingState.Cancel.performed += OnThrowingStateCancelInput;
+        
+        var asyncOperationHandler = fakeBallReference.InstantiateAsync();
+        asyncOperationHandler.Completed += HandleLoadedFakeBall;
+        
+        throwingBallRigidbody = playerBallHandler.GetBall().GetComponent<Rigidbody>();
+        throwingCamera.SetActive(true);
+       
+        previousCamera = playerMovement.GetMoveRelativeTo();
+        playerMovement.SetMoveRelativeTo(throwingCamera.transform);
+        animationHandler.PlayAnimationState(GetType().Name);
+        canvasGameObject.SetActive(true);
     }
 
     private void DebugSimulateTrajectory(InputAction.CallbackContext obj)
@@ -51,63 +64,75 @@ public class PlayerThrowingState : State
 
     private void HandleLoadedFakeBall(AsyncOperationHandle<GameObject> obj)
     {
-        fakeBallInstance = obj.Result;
+        projectileSimulationInstance = obj.Result;
         SimulateTrajectory();
     }
 
-    public void SimulateTrajectory()
-    {
-        Rigidbody fakeBallRigidbody = fakeBallInstance.GetComponent<Rigidbody>();
-        fakeBallRigidbody.GetComponent<TrailRenderer>().Clear();
-        fakeBallRigidbody.MovePosition(throwingBallRigidbody.position);
-        fakeBallRigidbody.MoveRotation(throwingBallRigidbody.transform.rotation);
-
-        fakeBallRigidbody.velocity = Vector3.zero;
-        fakeBallRigidbody.angularVelocity = Vector3.zero;
-        //   fakeBallRigidbody.transform.position = throwingBallRigidbody.transform.position;
-        //     fakeBallRigidbody.transform.rotation = throwingBallRigidbody.transform.rotation;
-        //   throwDirection = (playerTargetGoal.GetTargetGoal().transform.position - throwingBallRigidbody.transform.position).normalized;
-
-        throwDirection =
-            (playerTargetGoal.GetTargetGoal().transform.position - throwingBallRigidbody.transform.position)
-            .normalized; // Calcula la dirección de lanzamiento
-        throwDirection.y = 1; // Añade una componente vertical positiva
-        throwDirection = throwDirection.normalized; // Normaliza la dirección de nuevo
-        Throw(fakeBallRigidbody);
-    }
+   
 
     public void AdjustThrowingForce()
     {
         SimulateTrajectory();
     }
 
+    public void SimulateTrajectory()
+    {
+        var ballVisual=        playerBallHandler.GetBallVisuals();
+        Rigidbody projectileSimulation = projectileSimulationInstance.GetComponent<Rigidbody>();
+        projectileSimulation.GetComponent<TrailRenderer>().Clear();
+        projectileSimulation.MovePosition(ballVisual.transform.position);
+        projectileSimulation.MoveRotation(ballVisual.transform.rotation);
 
-    public override void OnUpdateState()
+        projectileSimulation.velocity = Vector3.zero;
+        projectileSimulation.angularVelocity = Vector3.zero;
+        
+        throwDirection =
+            (playerTargetGoal.GetTargetGoal().transform.position - ballVisual.transform.position);
+            
+        throwDirection = throwDirection.normalized;
+        throwDirection.y = minimumYDirection;
+
+        Throw(projectileSimulation);
+    }
+    public void OnUpdateState()
     {
     }
 
-    public override void OnExitState()
+    public void ReleaseBall()
     {
-        Addressables.ReleaseInstance(fakeBallInstance);
+        playerBallHandler.GetComponent<CatchBall>().LoseBall();
+    }
+    public void OnExitState()
+    {
+        canvasGameObject.SetActive(false);
+        playerMovement.SetMoveRelativeTo(previousCamera.transform);
+
+        Addressables.ReleaseInstance(projectileSimulationInstance);
         fakeBallReference.ReleaseAsset();
         throwingCamera.SetActive(false);
         playerActions.ThrowingState.ThrowBall.performed -= OnThrowInput;
+        playerActions.ThrowingState.DebugThrow.performed -= DebugSimulateTrajectory;
         playerActions.ThrowingState.PowerChange.performed -= OnPowerInputChanged;
         playerActions.ThrowingState.Cancel.performed -= OnThrowingStateCancelInput;
-    }
+     }
 
     public void OnThrowingStateCancelInput(InputAction.CallbackContext context)
     {
-        playerStateHandler.ChangeState("PlayerIdleState");
+        stateHandler.ChangeState(stateToReturnOnCancel);
     }
 
     public void OnThrowInput(InputAction.CallbackContext context)
     {
+        ReleaseBall();
         Throw(throwingBallRigidbody);
+        stateHandler.ChangeState(stateToReturnAfterThrowing);
+
     }
 
     public void Throw(Rigidbody bodyToThrow)
-    {
+    { 
+        bodyToThrow.velocity = Vector3.zero;
+        bodyToThrow.angularVelocity = Vector3.zero;
         bodyToThrow.AddForce(
             throwDirection * throwingForcePercentage * maxThrowingForce,
             throwingForceMode);
@@ -115,12 +140,16 @@ public class PlayerThrowingState : State
 
     public void OnPowerInputChanged(InputAction.CallbackContext context)
     {
+        SimulateTrajectory();
         float direction = Mathf.Clamp(context.ReadValue<float>(), -1, 1);
         throwingForcePercentage = Mathf.Clamp(throwingForcePercentage + direction * valueToPowerUpEachTime, 0, 1);
     }
 
     public void OnChangeDirectionInput(InputAction.CallbackContext context)
     {
-        float direction = context.ReadValue<float>();
+        SimulateTrajectory(); 
+        Vector2 direction = context.ReadValue<Vector2>();
     }
+
+   
 }
