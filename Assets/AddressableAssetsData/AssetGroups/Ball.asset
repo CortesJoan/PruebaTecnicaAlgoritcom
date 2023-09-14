@@ -32,8 +32,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5ae0e4418bcaaf74eb98c5183de9842e
-    m_Address: Assets/Basketball/FakeProjectile Variant.prefab
+  - m_GUID: ecb9a4df9215ad04ebdaa580fd71ece1
+    m_Address: Assets/Basketball/FakeProjectile Variant 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 937098760b46b024c9b48c934d87fc4e
+    m_Address: Assets/Basketball/Prefabs/BallVisuals.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
