@@ -2,6 +2,7 @@
 
 public class PlayerTargetGoal : MonoBehaviour
 {
+    [Header("Config")] 
     [SerializeField] private GameObject targetGoal;
 
     public void SetTargetGoal(GameObject targetGoal)

@@ -1,0 +1,572 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78c6efa51b78674bac5fa1e7f03afe6, type: 3}
+  m_Name: Throw
+  m_EditorClassIdentifier: 
+  isHuman: 1
+  haveRootT: 1
+  rootT: {x: -0.0005901254, y: 0.003696829, z: 0.023966607}
+  haveRootQ: 1
+  rootQ: {x: 0, y: 0, z: 0, w: 1}
+  musclePropertyNames:
+  - Spine Front-Back
+  - Spine Left-Right
+  - Spine Twist Left-Right
+  - Chest Front-Back
+  - Chest Left-Right
+  - Chest Twist Left-Right
+  - UpperChest Front-Back
+  - UpperChest Left-Right
+  - UpperChest Twist Left-Right
+  - Neck Nod Down-Up
+  - Neck Tilt Left-Right
+  - Neck Turn Left-Right
+  - Head Nod Down-Up
+  - Head Tilt Left-Right
+  - Head Turn Left-Right
+  - Left Eye Down-Up
+  - Left Eye In-Out
+  - Right Eye Down-Up
+  - Right Eye In-Out
+  - Jaw Close
+  - Jaw Left-Right
+  - Left Upper Leg Front-Back
+  - Left Upper Leg In-Out
+  - Left Upper Leg Twist In-Out
+  - Left Lower Leg Stretch
+  - Left Lower Leg Twist In-Out
+  - Left Foot Up-Down
+  - Left Foot Twist In-Out
+  - Left Toes Up-Down
+  - Right Upper Leg Front-Back
+  - Right Upper Leg In-Out
+  - Right Upper Leg Twist In-Out
+  - Right Lower Leg Stretch
+  - Right Lower Leg Twist In-Out
+  - Right Foot Up-Down
+  - Right Foot Twist In-Out
+  - Right Toes Up-Down
+  - Left Shoulder Down-Up
+  - Left Shoulder Front-Back
+  - Left Arm Down-Up
+  - Left Arm Front-Back
+  - Left Arm Twist In-Out
+  - Left Forearm Stretch
+  - Left Forearm Twist In-Out
+  - Left Hand Down-Up
+  - Left Hand In-Out
+  - Right Shoulder Down-Up
+  - Right Shoulder Front-Back
+  - Right Arm Down-Up
+  - Right Arm Front-Back
+  - Right Arm Twist In-Out
+  - Right Forearm Stretch
+  - Right Forearm Twist In-Out
+  - Right Hand Down-Up
+  - Right Hand In-Out
+  - LeftHand.Thumb.1 Stretched
+  - LeftHand.Thumb.Spread
+  - LeftHand.Thumb.2 Stretched
+  - LeftHand.Thumb.3 Stretched
+  - LeftHand.Index.1 Stretched
+  - LeftHand.Index.Spread
+  - LeftHand.Index.2 Stretched
+  - LeftHand.Index.3 Stretched
+  - LeftHand.Middle.1 Stretched
+  - LeftHand.Middle.Spread
+  - LeftHand.Middle.2 Stretched
+  - LeftHand.Middle.3 Stretched
+  - LeftHand.Ring.1 Stretched
+  - LeftHand.Ring.Spread
+  - LeftHand.Ring.2 Stretched
+  - LeftHand.Ring.3 Stretched
+  - LeftHand.Little.1 Stretched
+  - LeftHand.Little.Spread
+  - LeftHand.Little.2 Stretched
+  - LeftHand.Little.3 Stretched
+  - RightHand.Thumb.1 Stretched
+  - RightHand.Thumb.Spread
+  - RightHand.Thumb.2 Stretched
+  - RightHand.Thumb.3 Stretched
+  - RightHand.Index.1 Stretched
+  - RightHand.Index.Spread
+  - RightHand.Index.2 Stretched
+  - RightHand.Index.3 Stretched
+  - RightHand.Middle.1 Stretched
+  - RightHand.Middle.Spread
+  - RightHand.Middle.2 Stretched
+  - RightHand.Middle.3 Stretched
+  - RightHand.Ring.1 Stretched
+  - RightHand.Ring.Spread
+  - RightHand.Ring.2 Stretched
+  - RightHand.Ring.3 Stretched
+  - RightHand.Little.1 Stretched
+  - RightHand.Little.Spread
+  - RightHand.Little.2 Stretched
+  - RightHand.Little.3 Stretched
+  muscleValues:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.47151482
+  - 0.008070468
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.71032417
+  - 0.026603827
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.1350441
+  - -0.53328925
+  - 0.18955444
+  - 0.28238696
+  - -0.33782676
+  - 0.9137255
+  - -0.26221085
+  - 0
+  - 0
+  - 0.2102663
+  - -0.5436511
+  - 0.27321586
+  - 0.2836836
+  - -0.38145152
+  - 0.961743
+  - -0.75932485
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.44637385
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  - 0.45250255
+  tdofIndices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  tdofValues:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  ikIndices: 00000000010000000200000003000000
+  ikValues:
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  transformPaths:
+  - 
+  - PlayerVisuals
+  - PlayerVisuals/Ch06_nonPBR@Dribble
+  - PlayerVisuals/Ch06_nonPBR@Dribble/Ch06
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:LeftUpLeg
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:LeftUpLeg/mixamorig9:LeftLeg
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:LeftUpLeg/mixamorig9:LeftLeg/mixamorig9:LeftFoot
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:LeftUpLeg/mixamorig9:LeftLeg/mixamorig9:LeftFoot/mixamorig9:LeftToeBase
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:LeftUpLeg/mixamorig9:LeftLeg/mixamorig9:LeftFoot/mixamorig9:LeftToeBase/mixamorig9:LeftToe_End
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:RightUpLeg
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:RightUpLeg/mixamorig9:RightLeg
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:RightUpLeg/mixamorig9:RightLeg/mixamorig9:RightFoot
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:RightUpLeg/mixamorig9:RightLeg/mixamorig9:RightFoot/mixamorig9:RightToeBase
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:RightUpLeg/mixamorig9:RightLeg/mixamorig9:RightFoot/mixamorig9:RightToeBase/mixamorig9:RightToe_End
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandIndex1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandIndex1/mixamorig9:LeftHandIndex2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandIndex1/mixamorig9:LeftHandIndex2/mixamorig9:LeftHandIndex3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandIndex1/mixamorig9:LeftHandIndex2/mixamorig9:LeftHandIndex3/mixamorig9:LeftHandIndex4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandMiddle1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandMiddle1/mixamorig9:LeftHandMiddle2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandMiddle1/mixamorig9:LeftHandMiddle2/mixamorig9:LeftHandMiddle3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandMiddle1/mixamorig9:LeftHandMiddle2/mixamorig9:LeftHandMiddle3/mixamorig9:LeftHandMiddle4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandPinky1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandPinky1/mixamorig9:LeftHandPinky2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandPinky1/mixamorig9:LeftHandPinky2/mixamorig9:LeftHandPinky3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandPinky1/mixamorig9:LeftHandPinky2/mixamorig9:LeftHandPinky3/mixamorig9:LeftHandPinky4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandRing1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandRing1/mixamorig9:LeftHandRing2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandRing1/mixamorig9:LeftHandRing2/mixamorig9:LeftHandRing3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandRing1/mixamorig9:LeftHandRing2/mixamorig9:LeftHandRing3/mixamorig9:LeftHandRing4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandThumb1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandThumb1/mixamorig9:LeftHandThumb2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandThumb1/mixamorig9:LeftHandThumb2/mixamorig9:LeftHandThumb3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:LeftShoulder/mixamorig9:LeftArm/mixamorig9:LeftForeArm/mixamorig9:LeftHand/mixamorig9:LeftHandThumb1/mixamorig9:LeftHandThumb2/mixamorig9:LeftHandThumb3/mixamorig9:LeftHandThumb4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:Neck
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:Neck/mixamorig9:Head
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:Neck/mixamorig9:Head/mixamorig9:HeadTop_End
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandIndex1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandIndex1/mixamorig9:RightHandIndex2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandIndex1/mixamorig9:RightHandIndex2/mixamorig9:RightHandIndex3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandIndex1/mixamorig9:RightHandIndex2/mixamorig9:RightHandIndex3/mixamorig9:RightHandIndex4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandMiddle1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandMiddle1/mixamorig9:RightHandMiddle2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandMiddle1/mixamorig9:RightHandMiddle2/mixamorig9:RightHandMiddle3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandMiddle1/mixamorig9:RightHandMiddle2/mixamorig9:RightHandMiddle3/mixamorig9:RightHandMiddle4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandPinky1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandPinky1/mixamorig9:RightHandPinky2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandPinky1/mixamorig9:RightHandPinky2/mixamorig9:RightHandPinky3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandPinky1/mixamorig9:RightHandPinky2/mixamorig9:RightHandPinky3/mixamorig9:RightHandPinky4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandRing1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandRing1/mixamorig9:RightHandRing2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandRing1/mixamorig9:RightHandRing2/mixamorig9:RightHandRing3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandRing1/mixamorig9:RightHandRing2/mixamorig9:RightHandRing3/mixamorig9:RightHandRing4
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandThumb1
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandThumb1/mixamorig9:RightHandThumb2
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandThumb1/mixamorig9:RightHandThumb2/mixamorig9:RightHandThumb3
+  - PlayerVisuals/Ch06_nonPBR@Dribble/mixamorig9:Hips/mixamorig9:Spine/mixamorig9:Spine1/mixamorig9:Spine2/mixamorig9:RightShoulder/mixamorig9:RightArm/mixamorig9:RightForeArm/mixamorig9:RightHand/mixamorig9:RightHandThumb1/mixamorig9:RightHandThumb2/mixamorig9:RightHandThumb3/mixamorig9:RightHandThumb4
+  - PlayerVisuals/Cube
+  - PlayerVisuals/Cube/Cube
+  - PlayerVisuals/Cube/Cube (1)
+  - PlayerFollowCamera
+  - PlayerFollowCamera/cm
+  - Collision
+  - Collision/PlayerCollision
+  - Collision/BallCatchArea
+  - BallHolder
+  - PossetionTimer
+  - Canvas
+  - Canvas/PowerBarVisual
+  transformValues:
+  - position: {x: -0.0013549328, y: -0.08482039, z: -0.026}
+    rotation: {x: 0, y: 1, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.02, y: 1.886, z: -0.25}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0, y: 0, z: 0}
+    rotation: {x: 0, y: -0, z: -0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.0007339061, y: -0.084820285, z: -0.05427592}
+    rotation: {x: -0.000000024621837, y: 0.000000012572856, z: 0.00000002751767, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.09840376, y: -0.06511545, z: 0.009519677}
+    rotation: {x: -0.008813739, y: 0.22092332, z: 0.9744762, w: 0.038876638}
+    scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+  - position: {x: -0.000000011175868, y: 0.41179034, z: 0}
+    rotation: {x: -0.32195982, y: -0.031233283, z: 0.024374595, w: 0.94592404}
+    scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+  - position: {x: -0.0000000018626437, y: 0.35324743, z: -4.074535e-10}
+    rotation: {x: 0.42696726, y: 0.030777985, z: -0.014542734, w: 0.90362614}
+    scale: {x: 1, y: 0.9999999, z: 1}
+  - position: {x: 0.0000000046566093, y: 0.19662239, z: 0}
+    rotation: {x: 0.35000616, y: 0.03796208, z: -0.014197439, w: 0.9358702}
+    scale: {x: 0.9999999, y: 1, z: 0.9999999}
+  - position: {x: -0.000000024965962, y: 0.07870641, z: -0.0000000014524633}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - position: {x: 0.09840376, y: -0.06511545, z: 0.0024257228}
+    rotation: {x: 0.0090244105, y: 0.22603454, z: 0.9733021, w: -0.038859304}
+    scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+  - position: {x: 0.000000007450581, y: 0.41147816, z: -0.000000009313225}
+    rotation: {x: -0.16157351, y: 0.019445626, z: -0.028485127, w: 0.98625785}
+    scale: {x: 0.99999994, y: 1, z: 1.0000001}
+  - position: {x: 0.000000003725289, y: 0.35326663, z: 2.3283056e-10}
+    rotation: {x: 0.43007794, y: -0.036406863, z: 0.017361023, w: 0.90189034}
+    scale: {x: 0.99999976, y: 0.9999997, z: 0.9999999}
+  - position: {x: -0.000000002793966, y: 0.20054476, z: -0.00000007450576}
+    rotation: {x: 0.34233254, y: -0.038428783, z: 0.014014721, w: 0.9386881}
+    scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+  - position: {x: -0.000000007242131, y: 0.08012868, z: -0.0000000013398427}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 1, y: 1.0000001, z: 1}
+  - position: {x: 0, y: 0.11752653, z: -0.005351889}
+    rotation: {x: -0.022751182, y: -0, z: -0, w: 0.99974114}
+    scale: {x: 1, y: 1.0000001, z: 0.9999999}
+  - position: {x: 6.661338e-16, y: 0.13725625, z: -4.6566123e-10}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 1.0000002, y: 1, z: 1.0000001}
+  - position: {x: -1.3877788e-17, y: 0.15686442, z: -4.6566123e-10}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 0.99999976, y: 1, z: 1}
+  - position: {x: -0.07849733, y: 0.14775957, z: -0.0011429432}
+    rotation: {x: 0.5739613, y: -0.4099885, z: 0.58226675, w: 0.4042812}
+    scale: {x: 0.9999999, y: 1, z: 1.0000001}
+  - position: {x: 0.000000007450581, y: 0.16612668, z: 0.000000044703473}
+    rotation: {x: 0.15602243, y: 0.11113678, z: -0.60758036, w: 0.7708124}
+    scale: {x: 1.0000001, y: 1.0000001, z: 0.9999998}
+  - position: {x: 0.00000006053595, y: 0.22575586, z: 0.000000013038509}
+    rotation: {x: -0.114872895, y: -0.041742373, z: -0.5101102, w: 0.85138094}
+    scale: {x: 1, y: 1, z: 0.99999994}
+  - position: {x: 0.000000031664957, y: 0.23494802, z: 0.000000029802303}
+    rotation: {x: -0.54141116, y: -0.18445934, z: -0.13962524, w: 0.80830294}
+    scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
+  - position: {x: 0.035721436, y: 0.09847441, z: 0.0014309093}
+    rotation: {x: 0.08633457, y: 0.075944796, z: -0.2021605, w: 0.972579}
+    scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+  - position: {x: -0.00023716861, y: 0.033193845, z: -0.000000028638144}
+    rotation: {x: 0.17765999, y: 0.05325653, z: -0.0052248226, w: 0.9826359}
+    scale: {x: 1.0000001, y: 0.9999999, z: 0.99999994}
+  - position: {x: 0.00012114959, y: 0.030680533, z: -0.000000027008308}
+    rotation: {x: 0.1412087, y: 0.052579395, z: -0.009999483, w: 0.988532}
+    scale: {x: 1, y: 1.0000002, z: 1}
+  - position: {x: 0.00011600973, y: 0.026640527, z: 0.00000036712007}
+    rotation: {x: -0, y: -0, z: -1.1449172e-15, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.010200709, y: 0.10081252, z: -0.002758617}
+    rotation: {x: 0.11669484, y: 0.036688395, z: -0.08141776, w: 0.9891448}
+    scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+  - position: {x: -0.00013367567, y: 0.035207015, z: 0.000000071246106}
+    rotation: {x: 0.18065183, y: 0.0254896, z: -0.0110190185, w: 0.983155}
+    scale: {x: 1.0000001, y: 0.9999999, z: 0.9999998}
+  - position: {x: 0.00017877326, y: 0.03274617, z: 0.000000003958116}
+    rotation: {x: 0.10098826, y: 0.025275236, z: -0.014094676, w: 0.9944666}
+    scale: {x: 1, y: 0.99999994, z: 1}
+  - position: {x: -0.00004503809, y: 0.0291798, z: 0.00000011651384}
+    rotation: {x: -0.0000000037252894, y: -0, z: -0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.034680154, y: 0.09103467, z: -0.00039795393}
+    rotation: {x: 0.16325815, y: -0.010165122, z: 0.13983503, w: 0.97657037}
+    scale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - position: {x: -0.000033503846, y: 0.026416862, z: -0.00000003911551}
+    rotation: {x: 0.18123697, y: 0.017763099, z: -0.012162564, w: 0.9832038}
+    scale: {x: 1, y: 1, z: 0.9999999}
+  - position: {x: 0.00014134582, y: 0.022011038, z: 0.000000007916231}
+    rotation: {x: 0.10465448, y: 0.017995846, z: -0.018182423, w: 0.9941796}
+    scale: {x: 1.0000001, y: 0.99999976, z: 1.0000001}
+  - position: {x: -0.00010789403, y: 0.017961573, z: -0.0000000744059}
+    rotation: {x: -0.000000014901161, y: 0.00000000784172, z: 0.0000000016830803, w: 1}
+    scale: {x: 0.9999999, y: 1, z: 1.0000001}
+  - position: {x: -0.011241814, y: 0.10177497, z: -0.0024965475}
+    rotation: {x: 0.14733708, y: 0.010585307, z: 0.06409406, w: 0.98695076}
+    scale: {x: 1, y: 1, z: 0.99999994}
+  - position: {x: 0.000085461594, y: 0.027422922, z: 0.000000036787217}
+    rotation: {x: 0.1678535, y: 0.016035082, z: -0.012917007, w: 0.9855969}
+    scale: {x: 1.0000002, y: 0.99999994, z: 1.0000001}
+  - position: {x: 0.00015409049, y: 0.028439688, z: -0.000000043772136}
+    rotation: {x: -0.10834386, y: -0.017572429, z: 0.019527908, w: -0.9937663}
+    scale: {x: 1.0000001, y: 1, z: 0.9999999}
+  - position: {x: -0.00023944302, y: 0.021343267, z: -0.00000009162552}
+    rotation: {x: -0, y: -0, z: 6.217247e-15, w: 1}
+    scale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - position: {x: 0.029351708, y: 0.029803202, z: 0.0121252695}
+    rotation: {x: 0.061553, y: 0.113019355, z: -0.51055425, w: 0.8501601}
+    scale: {x: 1.0000001, y: 1.0000002, z: 1}
+  - position: {x: 0.0060804333, y: 0.03430699, z: 0.000000050291373}
+    rotation: {x: 0.014756067, y: 0.045465175, z: -0.014647603, w: 0.99874955}
+    scale: {x: 1.0000002, y: 0.9999998, z: 1.0000001}
+  - position: {x: -0.0010523291, y: 0.034070607, z: 0.000000039115513}
+    rotation: {x: -0.02611771, y: 0.04285404, z: 0.025560562, w: 0.99841285}
+    scale: {x: 0.9999999, y: 1, z: 0.99999976}
+  - position: {x: -0.005028048, y: 0.02986709, z: 0.0000001870506}
+    rotation: {x: -0, y: -0, z: 4.440891e-16, w: 1}
+    scale: {x: 0.9999999, y: 1, z: 0.9999999}
+  - position: {x: -4.440892e-16, y: 0.17647232, z: -0.0000000037252899}
+    rotation: {x: 0.022751242, y: -0, z: -0, w: 0.9997412}
+    scale: {x: 1.0000001, y: 0.9999998, z: 1}
+  - position: {x: 0, y: 0.050166, z: 0.018802216}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 0.9999999, y: 0.9999999, z: 1}
+  - position: {x: 0.00000011920929, y: 0.20743375, z: 0.07774628}
+    rotation: {x: -0, y: -0, z: -8.602676e-23, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.07849733, y: 0.14777452, z: -0.0014714154}
+    rotation: {x: -0.57270116, y: -0.4108937, z: 0.5834292, w: -0.40347257}
+    scale: {x: 0.9999998, y: 0.9999999, z: 0.9999998}
+  - position: {x: -0.000000037485723, y: 0.16612673, z: 0.000000003725289}
+    rotation: {x: 0.12202669, y: -0.15075369, z: 0.61795294, w: 0.7619167}
+    scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+  - position: {x: -0.000000069849165, y: 0.22570641, z: 0.000000057741985}
+    rotation: {x: 0.13815871, y: -0.028470796, z: -0.50108033, w: -0.85382676}
+    scale: {x: 0.99999994, y: 1.0000001, z: 0.9999998}
+  - position: {x: -0.00000008381897, y: 0.23493448, z: 0.00000009499488}
+    rotation: {x: -0.53601146, y: 0.19319926, z: 0.29236454, w: 0.7680422}
+    scale: {x: 0.99999994, y: 1, z: 1.0000001}
+  - position: {x: -0.03771859, y: 0.102802664, z: 0.00091075886}
+    rotation: {x: -0.11064485, y: 0.061578743, z: -0.17054273, w: -0.9771801}
+    scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
+  - position: {x: 0.00013510056, y: 0.030887488, z: 0.000000059604623}
+    rotation: {x: -0.1788668, y: 0.03382137, z: -0.008281558, w: -0.98325694}
+    scale: {x: 1.0000001, y: 1, z: 1}
+  - position: {x: -0.000049022437, y: 0.029685672, z: -0.00000003469175}
+    rotation: {x: -0.15478621, y: 0.03316903, z: -0.010910689, w: -0.9873308}
+    scale: {x: 1.0000001, y: 1, z: 0.9999999}
+  - position: {x: -0.00008601545, y: 0.024632882, z: 0.000000227671}
+    rotation: {x: -0, y: -0, z: 6.661336e-16, w: 1}
+    scale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - position: {x: -0.009695952, y: 0.10202897, z: -0.0037156264}
+    rotation: {x: -0.12860274, y: 0.036946, z: -0.07661568, w: -0.98804176}
+    scale: {x: 0.99999994, y: 1, z: 0.9999999}
+  - position: {x: 0.000095315416, y: 0.03480202, z: -0.0000000060535967}
+    rotation: {x: -0.17903082, y: 0.025691688, z: -0.009207026, w: -0.98346484}
+    scale: {x: 1, y: 0.9999996, z: 0.9999999}
+  - position: {x: -0.00012760272, y: 0.03263031, z: 0.000000008381903}
+    rotation: {x: -0.098368794, y: 0.025556684, z: -0.010775849, w: -0.9947635}
+    scale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - position: {x: 0.00003230158, y: 0.029082684, z: 0.0000000147736445}
+    rotation: {x: -0, y: 3.5527133e-15, z: -2.2204458e-15, w: 1}
+    scale: {x: 1.0000001, y: 1, z: 1}
+  - position: {x: 0.035121493, y: 0.09241803, z: -0.0002893917}
+    rotation: {x: -0.15483911, y: -0.009853124, z: 0.14561006, w: -0.9771006}
+    scale: {x: 1, y: 1, z: 0.9999999}
+  - position: {x: 0.0000351865, y: 0.02535209, z: 0.000000017695127}
+    rotation: {x: -0.17879485, y: 0.019486398, z: -0.009159476, w: -0.9836508}
+    scale: {x: 1, y: 0.9999998, z: 0.9999999}
+  - position: {x: -0.00011955694, y: 0.02269916, z: -0.000000023283068}
+    rotation: {x: -0.10236664, y: 0.019636123, z: -0.014283119, w: -0.99445033}
+    scale: {x: 1.0000001, y: 1, z: 1}
+  - position: {x: 0.00008437086, y: 0.017287502, z: -0.000000055473127}
+    rotation: {x: -0.000000014901159, y: 0.000000036968768, z: 0.000000004646561, w: 1}
+    scale: {x: 1, y: 1, z: 1.0000001}
+  - position: {x: 0.012292944, y: 0.1039232, z: -0.0020874038}
+    rotation: {x: -0.14375171, y: 0.01259878, z: 0.064413115, w: -0.98743486}
+    scale: {x: 1.0000001, y: 1, z: 0.99999994}
+  - position: {x: -0.000029480052, y: 0.02884459, z: 0.000000016763806}
+    rotation: {x: -0.15404713, y: 0.02062696, z: -0.009600564, w: -0.98780155}
+    scale: {x: 1.0000001, y: 1, z: 0.9999999}
+  - position: {x: -0.000054188004, y: 0.026463836, z: 0.000000036787235}
+    rotation: {x: -0.10039512, y: 0.021103412, z: -0.01055816, w: -0.99466777}
+    scale: {x: 0.9999999, y: 0.9999999, z: 1.0000001}
+  - position: {x: 0.00008373592, y: 0.022535183, z: 0.00000006650488}
+    rotation: {x: -0, y: 1.7763562e-15, z: 2.2204452e-15, w: 1}
+    scale: {x: 1.0000001, y: 1, z: 0.9999999}
+  - position: {x: -0.030254869, y: 0.03211685, z: 0.014098836}
+    rotation: {x: -0.07051049, y: 0.11755581, z: -0.5010325, w: -0.85450304}
+    scale: {x: 1, y: 1, z: 0.99999976}
+  - position: {x: -0.006963692, y: 0.03639658, z: -0.0000000074505797}
+    rotation: {x: -0.008259886, y: 0.041728813, z: -0.017468747, w: -0.9989421}
+    scale: {x: 1.0000001, y: 0.9999998, z: 0.99999994}
+  - position: {x: 0.0008561117, y: 0.03270308, z: 0.000000009313222}
+    rotation: {x: 0.014847954, y: 0.039098125, z: -0.01409331, w: -0.9990257}
+    scale: {x: 1, y: 1.0000001, z: 1}
+  - position: {x: 0.0061075166, y: 0.024917083, z: -0.00000008345104}
+    rotation: {x: 0.000000014901159, y: 0.000000029597844, z: -0.0000000058163643, w: 1}
+    scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 0.5, y: 1.8, z: 0.5}
+  - position: {x: 1.51, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 4, y: 0.14, z: 0.4}
+  - position: {x: -0.61, y: 0, z: 1.79}
+    rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    scale: {x: 4, y: 0.14, z: 0.4}
+  - position: {x: 0.099999666, y: 2.400011, z: -2.6999693}
+    rotation: {x: 0.24471398, y: -0.0029614219, z: 0.0007474303, w: 0.9695905}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: -0, y: -0, z: -0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.171, y: 0.414, z: 0.8}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.086, y: 1.471, z: -0.137}
+    rotation: {x: -0, y: -1, z: -0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  blendShapePaths: []
+  blendShapeValues: []
