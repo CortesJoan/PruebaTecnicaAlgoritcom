@@ -65,3 +65,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 cs_files.txt
+
+Assets/cs_files.txt.meta
+
+Assets/batchCopy.bat.meta
+
+Assets/batchCopy.bat
