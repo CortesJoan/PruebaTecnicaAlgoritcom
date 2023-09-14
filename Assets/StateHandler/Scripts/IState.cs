@@ -1,7 +1,6 @@
 ﻿using System;
-
-[Serializable]
-public abstract class State
+ 
+public interface IState
 {
     public abstract void OnEnterState();
     public abstract void OnUpdateState();

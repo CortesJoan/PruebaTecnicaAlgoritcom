@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateHandler : MonoBehaviour
+public class StateHandler : MonoBehaviour
 {
-    [SerializeReference, SubclassSelector] public List<State> availableStates;
-    [SerializeReference, SubclassSelector] public State currentState;
-    [SerializeReference, SubclassSelector] public State defaultState;
+    [Header("Config")]
+    [SerializeReference, SubclassSelector] private List<IState> availableStates;
+    [SerializeReference, SubclassSelector] private IState currentState;
+    [SerializeReference, SubclassSelector] private IState defaultState;
     [SerializeField] private bool blockSwitchToSameState = true;
 
-    private void Awake()
+    private void Awake() 
     {
         if (currentState == null && defaultState != null)
         {
@@ -29,7 +30,7 @@ public class PlayerStateHandler : MonoBehaviour
     }
 
 
-    private State GetStateOfName(String name)
+    private IState GetStateOfName(String name)
     {
         foreach (var state in availableStates)
         {
@@ -38,11 +39,11 @@ public class PlayerStateHandler : MonoBehaviour
                 return state;
             }
         }
-        Debug.LogError($"State with name {name} not found");
+        Debug.LogError($"IState with name {name} not found");
         return defaultState;
     }
 
-    private void ChangeState(State newState)
+    private void ChangeState(IState newState)
     {
         if (blockSwitchToSameState && newState ==currentState)
         {
@@ -51,6 +52,11 @@ public class PlayerStateHandler : MonoBehaviour
         currentState.OnExitState();
         currentState = newState;
         currentState.OnEnterState();
+    }
+
+    public Type GetCurrentStateType()
+    {
+       return currentState.GetType();
     }
 }
 
