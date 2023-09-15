@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PickBall",
+                    "type": "Button",
+                    "id": "dc79289d-ba9b-48ee-bb3e-d6ffa861eb67",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -326,6 +335,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ThrowBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f75c7cf6-3768-4c67-98ce-8c4d0c916e16",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PickBall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

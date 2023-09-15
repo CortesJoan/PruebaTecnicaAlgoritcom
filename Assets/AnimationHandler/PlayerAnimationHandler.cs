@@ -25,6 +25,7 @@ public class PlayerAnimationHandler : MonoBehaviour
 
     public float GetCurrentAnimationDuration()
     {
-        return animator.GetCurrentAnimatorStateInfo(0).length;
+        var currentStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return currentStateInfo.length *currentStateInfo.speed;
     }
 } 

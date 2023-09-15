@@ -8,10 +8,11 @@ public class BasketballHoopController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject hoop;
+    [SerializeField] private GameObject targetPoint;
     [SerializeField] private string ballTag= "Ball";
     
     [Header("Events")]
-    public UnityEvent onBallEntered;
+    public UnityEvent<GameObject> onBallEntered;
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.position.y<hoop.transform.position.y)
@@ -20,7 +21,12 @@ public class BasketballHoopController : MonoBehaviour
         }
         if (other.CompareTag(ballTag) && !other.isTrigger)
         {
-            onBallEntered?.Invoke();
+            onBallEntered?.Invoke(other.gameObject);
         }
+    }
+
+    public GameObject GetTargetPoint()
+    {
+        return targetPoint;
     }
 }
