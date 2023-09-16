@@ -4,53 +4,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-public class CatchBall : MonoBehaviour
+public class CatchBallInput : MonoBehaviour
 {
     [Header("Config")] 
     [SerializeField] private string ballTag = "Ball";
-    
-    [Header("Events")]
-    public UnityEvent<GameObject> onBallCatched;
-    public UnityEvent<GameObject> onBallLosed;
 
+    [Header("Events")]
+    public UnityEvent<GameObject> onBallCaught;
+ 
     private GameObject ballOwnerShipHandlerGameObject;
     private bool canCatchBall;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(ballTag) && other)
+        if (other.gameObject.CompareTag(ballTag))
         {
             var ballOwnershipHandler = other.GetComponentInParent<BallOwnershipHandler>();
-            if (ballOwnershipHandler.HasOwner())
+            if (ballOwnershipHandler)
             {
-                return;
+                this.ballOwnerShipHandlerGameObject = ballOwnershipHandler.gameObject;
             }
-            CatchBallWithOwnership(ballOwnershipHandler);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(ballTag))
+        {
+            this.ballOwnerShipHandlerGameObject = null;
         }
     }
 
     public void CatchBallIfDetected(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed)
+        if (!ctx.performed || !ballOwnerShipHandlerGameObject)
         {
             return;
         }
         CatchBallWithOwnership(ballOwnerShipHandlerGameObject.GetComponent<BallOwnershipHandler>());
     }
-      void CatchBallWithOwnership(BallOwnershipHandler ballOwnershipHandler)
+
+    void CatchBallWithOwnership(BallOwnershipHandler ballOwnershipHandler)
     {
         if (!ballOwnershipHandler || ballOwnershipHandler.HasOwner())
         {
             return;
         }
         ballOwnerShipHandlerGameObject = ballOwnershipHandler.gameObject;
-        onBallCatched?.Invoke(ballOwnerShipHandlerGameObject);
+        onBallCaught?.Invoke(ballOwnerShipHandlerGameObject);
     }
-    public void LoseBall()
-    {
-        onBallLosed?.Invoke(ballOwnerShipHandlerGameObject);
-        ballOwnerShipHandlerGameObject = null;
-    }
+
+ 
 
     public GameObject GetCaughtBall()
     {

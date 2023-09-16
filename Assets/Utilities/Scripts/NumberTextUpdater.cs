@@ -17,6 +17,10 @@ public class UpdateTextNumber : MonoBehaviour
 
     public void UpdateNumber(float numberToPutInText)
     {
-        textToUpdate.text = textBeforeTheNumber + numberToPutInText.ToString(textFormatting) + textAfterTheNumber;
+        textToUpdate.SetText(textBeforeTheNumber + numberToPutInText.ToString(textFormatting) + textAfterTheNumber);  
+    }
+    public void UpdateWholeText(string newText)
+    {
+        textToUpdate.text = newText;
     }
 }

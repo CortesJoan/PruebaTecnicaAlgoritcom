@@ -37,36 +37,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
-                    ""type"": ""Value"",
-                    ""id"": ""6b444451-8a00-4d00-a97e-f47457f736a8"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ThrowBall"",
-                    ""type"": ""Button"",
-                    ""id"": ""74e8618e-65ce-4e49-ab5a-afe9d2b50b89"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""PickBall"",
                     ""type"": ""Button"",
                     ""id"": ""dc79289d-ba9b-48ee-bb3e-d6ffa861eb67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EnterThrowingState"",
+                    ""type"": ""Button"",
+                    ""id"": ""2696b56a-6d1c-40d2-a1e3-c9c2e42ef0e8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -263,111 +245,67 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""70f2890c-2951-4d6d-bd5d-0b8e1862d6af"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""ThrowBall"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""f75c7cf6-3768-4c67-98ce-8c4d0c916e16"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""PickBall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35f2b61f-04d7-431a-a2d2-7b4cce74ad1e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickBall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2cdbd3dd-9b69-49ce-a667-5442965bb6d1"",
+                    ""path"": ""<HID::HORIPAD S>/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PickBall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a956a2ce-7529-43ed-bde5-fbb9d4f37a2f"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""EnterThrowingState"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3ccae95-c644-4982-9580-75d975e1c3a8"",
+                    ""path"": ""<HID::HORIPAD S>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""EnterThrowingState"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""569ebcbf-51db-411b-a0dc-8086c7d57327"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""EnterThrowingState"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -928,6 +866,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DirectionChange"",
+                    ""type"": ""Value"",
+                    ""id"": ""641a8c52-d294-4cfd-bf22-c3924ef77620"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -966,11 +913,55 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6784e41a-935e-479b-abec-7cbb3ca88bd8"",
+                    ""path"": ""<HID::HORIPAD S>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1519b1ad-2003-48c9-bc93-155bf62147ae"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f27152f5-269c-485f-9a2e-1139cc0e8ec8"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ThrowBall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72b6c62a-147d-4126-a000-c20f36cb3092"",
+                    ""path"": ""<HID::HORIPAD S>/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ThrowBall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb051f5f-fa68-4547-8608-235380ece4e9"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""ThrowBall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -985,6 +976,50 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""DebugThrow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b768b54a-44f1-4654-95b7-9414ba66720c"",
+                    ""path"": ""<Joystick>/stick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""DirectionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""38fa82a9-08fa-442c-aeed-75dd9f3724f4"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DirectionChange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4c0beecc-5cdf-4ca6-8e27-673eac1d3800"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""DirectionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6f6ff86e-18e6-42f3-8cf2-c187c022309b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""DirectionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -1055,10 +1090,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // PlayerDefaultState
         m_PlayerDefaultState = asset.FindActionMap("PlayerDefaultState", throwIfNotFound: true);
         m_PlayerDefaultState_Move = m_PlayerDefaultState.FindAction("Move", throwIfNotFound: true);
-        m_PlayerDefaultState_Look = m_PlayerDefaultState.FindAction("Look", throwIfNotFound: true);
-        m_PlayerDefaultState_Fire = m_PlayerDefaultState.FindAction("Fire", throwIfNotFound: true);
-        m_PlayerDefaultState_ThrowBall = m_PlayerDefaultState.FindAction("ThrowBall", throwIfNotFound: true);
         m_PlayerDefaultState_PickBall = m_PlayerDefaultState.FindAction("PickBall", throwIfNotFound: true);
+        m_PlayerDefaultState_EnterThrowingState = m_PlayerDefaultState.FindAction("EnterThrowingState", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1077,6 +1110,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_ThrowingState_Cancel = m_ThrowingState.FindAction("Cancel", throwIfNotFound: true);
         m_ThrowingState_ThrowBall = m_ThrowingState.FindAction("ThrowBall", throwIfNotFound: true);
         m_ThrowingState_DebugThrow = m_ThrowingState.FindAction("DebugThrow", throwIfNotFound: true);
+        m_ThrowingState_DirectionChange = m_ThrowingState.FindAction("DirectionChange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1139,19 +1173,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerDefaultState;
     private List<IPlayerDefaultStateActions> m_PlayerDefaultStateActionsCallbackInterfaces = new List<IPlayerDefaultStateActions>();
     private readonly InputAction m_PlayerDefaultState_Move;
-    private readonly InputAction m_PlayerDefaultState_Look;
-    private readonly InputAction m_PlayerDefaultState_Fire;
-    private readonly InputAction m_PlayerDefaultState_ThrowBall;
     private readonly InputAction m_PlayerDefaultState_PickBall;
+    private readonly InputAction m_PlayerDefaultState_EnterThrowingState;
     public struct PlayerDefaultStateActions
     {
         private @PlayerActions m_Wrapper;
         public PlayerDefaultStateActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerDefaultState_Move;
-        public InputAction @Look => m_Wrapper.m_PlayerDefaultState_Look;
-        public InputAction @Fire => m_Wrapper.m_PlayerDefaultState_Fire;
-        public InputAction @ThrowBall => m_Wrapper.m_PlayerDefaultState_ThrowBall;
         public InputAction @PickBall => m_Wrapper.m_PlayerDefaultState_PickBall;
+        public InputAction @EnterThrowingState => m_Wrapper.m_PlayerDefaultState_EnterThrowingState;
         public InputActionMap Get() { return m_Wrapper.m_PlayerDefaultState; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1164,18 +1194,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Look.started += instance.OnLook;
-            @Look.performed += instance.OnLook;
-            @Look.canceled += instance.OnLook;
-            @Fire.started += instance.OnFire;
-            @Fire.performed += instance.OnFire;
-            @Fire.canceled += instance.OnFire;
-            @ThrowBall.started += instance.OnThrowBall;
-            @ThrowBall.performed += instance.OnThrowBall;
-            @ThrowBall.canceled += instance.OnThrowBall;
             @PickBall.started += instance.OnPickBall;
             @PickBall.performed += instance.OnPickBall;
             @PickBall.canceled += instance.OnPickBall;
+            @EnterThrowingState.started += instance.OnEnterThrowingState;
+            @EnterThrowingState.performed += instance.OnEnterThrowingState;
+            @EnterThrowingState.canceled += instance.OnEnterThrowingState;
         }
 
         private void UnregisterCallbacks(IPlayerDefaultStateActions instance)
@@ -1183,18 +1207,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Look.started -= instance.OnLook;
-            @Look.performed -= instance.OnLook;
-            @Look.canceled -= instance.OnLook;
-            @Fire.started -= instance.OnFire;
-            @Fire.performed -= instance.OnFire;
-            @Fire.canceled -= instance.OnFire;
-            @ThrowBall.started -= instance.OnThrowBall;
-            @ThrowBall.performed -= instance.OnThrowBall;
-            @ThrowBall.canceled -= instance.OnThrowBall;
             @PickBall.started -= instance.OnPickBall;
             @PickBall.performed -= instance.OnPickBall;
             @PickBall.canceled -= instance.OnPickBall;
+            @EnterThrowingState.started -= instance.OnEnterThrowingState;
+            @EnterThrowingState.performed -= instance.OnEnterThrowingState;
+            @EnterThrowingState.canceled -= instance.OnEnterThrowingState;
         }
 
         public void RemoveCallbacks(IPlayerDefaultStateActions instance)
@@ -1338,6 +1356,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ThrowingState_Cancel;
     private readonly InputAction m_ThrowingState_ThrowBall;
     private readonly InputAction m_ThrowingState_DebugThrow;
+    private readonly InputAction m_ThrowingState_DirectionChange;
     public struct ThrowingStateActions
     {
         private @PlayerActions m_Wrapper;
@@ -1346,6 +1365,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         public InputAction @Cancel => m_Wrapper.m_ThrowingState_Cancel;
         public InputAction @ThrowBall => m_Wrapper.m_ThrowingState_ThrowBall;
         public InputAction @DebugThrow => m_Wrapper.m_ThrowingState_DebugThrow;
+        public InputAction @DirectionChange => m_Wrapper.m_ThrowingState_DirectionChange;
         public InputActionMap Get() { return m_Wrapper.m_ThrowingState; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1367,6 +1387,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @DebugThrow.started += instance.OnDebugThrow;
             @DebugThrow.performed += instance.OnDebugThrow;
             @DebugThrow.canceled += instance.OnDebugThrow;
+            @DirectionChange.started += instance.OnDirectionChange;
+            @DirectionChange.performed += instance.OnDirectionChange;
+            @DirectionChange.canceled += instance.OnDirectionChange;
         }
 
         private void UnregisterCallbacks(IThrowingStateActions instance)
@@ -1383,6 +1406,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @DebugThrow.started -= instance.OnDebugThrow;
             @DebugThrow.performed -= instance.OnDebugThrow;
             @DebugThrow.canceled -= instance.OnDebugThrow;
+            @DirectionChange.started -= instance.OnDirectionChange;
+            @DirectionChange.performed -= instance.OnDirectionChange;
+            @DirectionChange.canceled -= instance.OnDirectionChange;
         }
 
         public void RemoveCallbacks(IThrowingStateActions instance)
@@ -1448,10 +1474,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IPlayerDefaultStateActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
-        void OnThrowBall(InputAction.CallbackContext context);
         void OnPickBall(InputAction.CallbackContext context);
+        void OnEnterThrowingState(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1472,5 +1496,6 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         void OnCancel(InputAction.CallbackContext context);
         void OnThrowBall(InputAction.CallbackContext context);
         void OnDebugThrow(InputAction.CallbackContext context);
+        void OnDirectionChange(InputAction.CallbackContext context);
     }
 }

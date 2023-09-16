@@ -10,23 +10,22 @@ public class PowerBarVisualUpdater : MonoBehaviour
     [SerializeField] private float midPowerThreshold = 0.5f;
     [SerializeField] private float highPowerThreshold = 0.75f;
     [SerializeField] private Color lowPowerColor = Color.red;
-    [SerializeField] private Color highPowerColor = Color.green;
     [SerializeField] private Color midPowerColor = Color.yellow;
-
-
+    [SerializeField] private Color highPowerColor = Color.green;
+    
     public void OnPowerChanged(float newPower)
     {
         powerBarFiller.fillAmount = newPower;
         AdjustColorWithNewPower(newPower);
     }
 
-    void AdjustColorWithNewPower(float newPower)
+    private void AdjustColorWithNewPower(float newPower)
     {
         if (newPower < lowPowerThreshold)
-            powerBarFiller.color = Color.red;
+            powerBarFiller.color = lowPowerColor;
         else if (newPower <= midPowerThreshold)
-            powerBarFiller.color = Color.yellow;
+            powerBarFiller.color = midPowerColor;
         else
-            powerBarFiller.color = Color.green;
+            powerBarFiller.color = highPowerColor;
     }
 }

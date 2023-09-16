@@ -20,23 +20,27 @@ public class PlayerPossessionCounter : MonoBehaviour
 
     private void StartPossessionTimer()
     {
-        possessionTimer = new TimerWithDelegate(maxPossessionTime);
+        possessionTimer = new TimerWithDelegate(maxPossessionTime,reverseTimer:true);
         possessionTimer.SetDelegateFunction(FinishPossession);
         isTimerRunning = true;
     }
 
     private void Update()
     {
-        if (isTimerRunning)
-        {
-            possessionTimer.Update();
-            onPossessionTimeUpdated.Invoke(possessionTimer.GetCurrentTime());
-        }
+        if (!isTimerRunning) return;
+        possessionTimer.Update(-Time.deltaTime);
+        onPossessionTimeUpdated.Invoke(possessionTimer.GetCurrentTime());
     }
 
     private void FinishPossession()
     {
         onReachedMaxPossessionTime?.Invoke();
+        isTimerRunning = false;
+    }
+
+    public void InterruptPossessionTimer()
+    {
+        possessionTimer.Reset();  
         isTimerRunning = false;
     }
 }

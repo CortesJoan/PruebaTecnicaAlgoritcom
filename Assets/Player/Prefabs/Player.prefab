@@ -150,6 +150,66 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &205428718243332065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570025986741313842}
+  - component: {fileID: 2900919167365931458}
+  m_Layer: 0
+  m_Name: ThrowPowerBarController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570025986741313842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205428718243332065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9033596774419413580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2900919167365931458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205428718243332065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a51ea8f6fb4ea6b1c201ec9dc7c0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPowerChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614847463117529644}
+        m_TargetAssemblyTypeName: PowerBarVisualUpdater, Assembly-CSharp
+        m_MethodName: OnPowerChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  currentPower: 0
 --- !u!1 &370217401997511948
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1436530864849617690}
   - component: {fileID: 8878094602944263367}
-  - component: {fileID: 4451167974623338472}
   m_Layer: 0
   m_Name: PlayerFollowCamera
   m_TagString: Untagged
@@ -223,18 +282,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8113344185199954260}
---- !u!114 &4451167974623338472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370217401997511948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b123c6402d80b1745a4c3d4d3fec683f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &555605280339660988
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,9 +724,11 @@ GameObject:
   - component: {fileID: 9151592157849454946}
   - component: {fileID: 3624996927710236546}
   - component: {fileID: 3423758532132208318}
+  - component: {fileID: 3756820738187799588}
+  - component: {fileID: 4957459078419801122}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,6 +752,7 @@ Transform:
   - {fileID: 516648156664494912}
   - {fileID: 1310341535436777291}
   - {fileID: 6745469049038783160}
+  - {fileID: 570025986741313842}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &6326894805200191785
@@ -746,30 +796,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
-    m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta,/Pen/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
-    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4470158060952854366}
-        m_TargetAssemblyTypeName: EnterShootState, Assembly-CSharp
-        m_MethodName: OnEnterShootStateInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 74e8618e-65ce-4e49-ab5a-afe9d2b50b89
-    m_ActionName: Player/Shoot
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
@@ -842,6 +868,27 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dc79289d-ba9b-48ee-bb3e-d6ffa861eb67
     m_ActionName: PlayerDefaultState/PickBall[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4470158060952854366}
+        m_TargetAssemblyTypeName: EnterShootState, Assembly-CSharp
+        m_MethodName: OnEnterShootStateInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2696b56a-6d1c-40d2-a1e3-c9c2e42ef0e8
+    m_ActionName: PlayerDefaultState/EnterThrowingState[/Mouse/rightButton,/HORIPAD
+      S/button2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 641a8c52-d294-4cfd-bf22-c3924ef77620
+    m_ActionName: ThrowingState/DirectionChange[/HORIPAD S/stick/x,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: PlayerDefaultState
@@ -905,8 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3a0931eab027948bec19151c819532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballTag: Ball
-  onBallCatched:
+  ballTag: Catcheable
+  onBallCaught:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7861341642585846666}
@@ -919,21 +966,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: PlayerCatchBallState
-          m_BoolArgument: 0
-        m_CallState: 2
-  onBallLosed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3857852437152985474}
-        m_TargetAssemblyTypeName: PlayerBallHandler, Assembly-CSharp
-        m_MethodName: LoseBall
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &14064800670345913
@@ -1029,19 +1061,22 @@ MonoBehaviour:
       data:
         stateHandler: {fileID: 7861341642585846666}
         playerBallHandler: {fileID: 3857852437152985474}
+        powerBarController: {fileID: 2900919167365931458}
         playerTargetBasket: {fileID: 7428356898551868398}
         playerMovement: {fileID: 3108719071224457881}
-        powerBarCanvas: {fileID: 7028852239604441073}
         animationHandler:
           rid: 6631191237579505685
+        powerBarCanvas: {fileID: 7028852239604441073}
         fakeBallReference:
           m_AssetGUID: ecb9a4df9215ad04ebdaa580fd71ece1
           m_SubObjectName: 
           m_SubObjectType: 
           m_EditorAssetChanged: 0
-        throwDirection: {x: 0, y: 0, z: 0}
-        throwingForceClamped: 0.5
-        maxThrowingForce: 15
+        layerMask:
+          serializedVersion: 2
+          m_Bits: 1
+        throwingForceClampedAtEnterTheState: 0.5
+        maxThrowingForce: 12
         throwingForceMode: 1
         throwingCamera: {fileID: 3696364873511001579}
     - rid: 6631191220182843401
@@ -1067,10 +1102,10 @@ MonoBehaviour:
     - rid: 6631191237579505706
       type: {class: PlayerCatchBallState, ns: , asm: Assembly-CSharp}
       data:
-        catchBall: {fileID: 8074330998242377698}
+        catchBallInput: {fileID: 8074330998242377698}
         changeStateWhenBallCaught: {fileID: 14064800670345913}
         playerBallHandler: {fileID: 3857852437152985474}
-        playerTargetBasket: {fileID: 7428356898551868398}
+        playerPossessionCounter: {fileID: 5781135871144734025}
         playerMovement: {fileID: 3108719071224457881}
         animationHandler:
           rid: 6631191237579505707
@@ -1112,6 +1147,21 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  onLostBall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5781135871144734025}
+        m_TargetAssemblyTypeName: PlayerPossessionCounter, Assembly-CSharp
+        m_MethodName: InterruptPossessionTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7428356898551868398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,13 +1203,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcea63d8b1747f09dfaffbe56c93228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPossessionTime: 0
+  maxPossessionTime: 24
   onReachedMaxPossessionTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8074330998242377698}
-        m_TargetAssemblyTypeName: CatchBall, Assembly-CSharp
+      - m_Target: {fileID: 3857852437152985474}
+        m_TargetAssemblyTypeName: PlayerBallHandler, Assembly-CSharp
         m_MethodName: LoseBall
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 14064800670345913}
+        m_TargetAssemblyTypeName: ChangeStateWhenBallCaught, Assembly-CSharp
+        m_MethodName: OnBallLost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1167,7 +1229,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   onPossessionTimeUpdated:
     m_PersistentCalls:
@@ -1244,12 +1306,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798144a25b73430bbac7efcd33a254d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPoints: 0
   onPointsChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4676988499582620368}
         m_TargetAssemblyTypeName: UpdateTextNumber, Assembly-CSharp
         m_MethodName: UpdateNumber
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3756820738187799588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440255662062866211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c347fda688ee7a840993dda050a88c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4957459078419801122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440255662062866211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc043f4f881b0740adc45edc8941f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: 
+  onNameChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5373638350906962360}
+        m_TargetAssemblyTypeName: UpdateTextNumber, Assembly-CSharp
+        m_MethodName: UpdateWholeText
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1322,7 +1425,7 @@ Transform:
   m_GameObject: {fileID: 2748773106416243134}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0016954762, y: -0.92228925, z: 0.38611144, w: -0.017249582}
-  m_LocalPosition: {x: -0.30458593, y: 1.3690019, z: 12.953795}
+  m_LocalPosition: {x: -0.23837185, y: 1.369319, z: 12.954305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1599,6 +1702,54 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &3177716322551082961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3852529010316281385}
+  - component: {fileID: 5373638350906962360}
+  m_Layer: 0
+  m_Name: PlayerNameUpdater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3852529010316281385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177716322551082961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 516648156664494912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5373638350906962360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177716322551082961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5402fff40a6232b45b02adbf2e2f37f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToUpdate: {fileID: 1986080396180845006}
+  textBeforeTheNumber: 
+  textAfterTheNumber: 
+  textFormatting: F1
 --- !u!1 &3575571814209488199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,10 +1921,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5402fff40a6232b45b02adbf2e2f37f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 7088286235360732023}
+  textToUpdate: {fileID: 743480220509021129}
   textBeforeTheNumber: 'Score: '
   textAfterTheNumber: 
-  textFormatting: F1
+  textFormatting: F0
 --- !u!1 &3696364873511001579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,7 +1951,7 @@ Transform:
   m_GameObject: {fileID: 3696364873511001579}
   serializedVersion: 2
   m_LocalRotation: {x: 0.060837474, y: 0.9391545, z: -0.23703225, w: 0.24104647}
-  m_LocalPosition: {x: -968.754, y: -532.5978, z: 15.958618}
+  m_LocalPosition: {x: -967.08, y: -533.6278, z: 12.628616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1849,140 +2000,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4061494189735630167}
---- !u!1 &3787356654148844262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 606736301059998684}
-  - component: {fileID: 5648259606715757263}
-  - component: {fileID: 1530922075425146396}
-  m_Layer: 0
-  m_Name: ScoreNumber
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &606736301059998684
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787356654148844262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439440630922980935}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.6, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5648259606715757263
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787356654148844262}
-  m_CullTransparentMesh: 1
---- !u!114 &1530922075425146396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3787356654148844262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 0
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3818172227396508550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2080,7 @@ Transform:
   m_GameObject: {fileID: 3823291685193511567}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0046955384, y: -0.9352712, z: 0.35219076, w: -0.034750193}
-  m_LocalPosition: {x: -0.35064316, y: 1.3678551, z: 12.951668}
+  m_LocalPosition: {x: -0.38094854, y: 0.13826895, z: 10.670861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2372,8 +2389,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 606736301059998684}
+  m_Children: []
   m_Father: {fileID: 6384781547468832675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2409,7 +2425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2510,6 +2526,7 @@ Transform:
   - {fileID: 2263602343070598144}
   - {fileID: 5091709577505146989}
   - {fileID: 5986024416431516843}
+  - {fileID: 3852529010316281385}
   m_Father: {fileID: 9033596774419413580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6031856745660664290
@@ -2524,7 +2541,7 @@ GameObject:
   - component: {fileID: 5203161260815089060}
   m_Layer: 0
   m_Name: PlayerCollision
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2593,7 +2610,7 @@ Transform:
   m_GameObject: {fileID: 6122989225269982439}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0021163037, y: -0.9291445, z: 0.36926553, w: -0.01813577}
-  m_LocalPosition: {x: -0.30699253, y: 1.3689613, z: 12.95372}
+  m_LocalPosition: {x: -0.3579259, y: 0.13734102, z: 10.66914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2748,10 +2765,10 @@ CapsuleCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.77
+  m_Radius: 1.48
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &6908879296958868980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,6 +3046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6745469049038783160}
+  - component: {fileID: 8142423344280984609}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -3054,6 +3072,18 @@ Transform:
   - {fileID: 3446714689027957395}
   m_Father: {fileID: 9033596774419413580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8142423344280984609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7843403191425175273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b123c6402d80b1745a4c3d4d3fec683f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7868926342550005610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,7 +3225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ShotClock: 0'
+  m_text: 'ShotClock: 24'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3311,7 +3341,7 @@ MonoBehaviour:
   textToUpdate: {fileID: 7088286235360732023}
   textBeforeTheNumber: 'ShotClock: '
   textAfterTheNumber: 
-  textFormatting: F1
+  textFormatting: F0
 --- !u!1001 &4288931652204743120
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,19 +9,22 @@ public class BasketballHoopController : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject hoop;
     [SerializeField] private GameObject targetPoint;
-    [SerializeField] private string ballTag= "Ball";
+    [SerializeField] private string ballTag= "";
     
     [Header("Events")]
     public UnityEvent<GameObject> onBallEntered;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.position.y<hoop.transform.position.y)
+        if (  !other.CompareTag(ballTag) || !other.isTrigger)
         {
             return;
-        }
-        if (other.CompareTag(ballTag) && !other.isTrigger)
+        } 
+        Vector3 direction = other.GetComponentInParent<Rigidbody>().velocity;
+    
+        if (direction.y <0     && other.isTrigger)
         {
             onBallEntered?.Invoke(other.gameObject);
+            other.GetComponentInParent<SpawnedBy>().ReturnToSpawnPosition();
         }
     }
 

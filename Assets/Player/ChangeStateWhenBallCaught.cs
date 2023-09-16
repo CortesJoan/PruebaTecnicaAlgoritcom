@@ -2,30 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+
 
 public class ChangeStateWhenBallCaught : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private StateHandler stateHandler;
+    [SerializeField]
+    private StateHandler stateHandler;
 
     public void OnBallCaught()
-    {     
+    {
         string currentName = stateHandler.GetCurrentStateType().Name;
         string newName = "";
-        if (currentName.Contains("Catch"))
-        {
-            newName = nameof(PlayerIdleStateWithBall);
-        }else{
-          newName = currentName.Replace("WithoutBall", "WithBall");
-        }
+        newName = currentName.Contains("Catch")
+            ? nameof(PlayerIdleStateWithBall)
+            : currentName.Replace("WithoutBall", "WithBall");
         stateHandler.ChangeState(newName);
     }
 
     public void OnBallLost()
     {
         string currentName = stateHandler.GetCurrentStateType().Name;
-        string newName = currentName.Replace("WithBall", "WithoutBall");
+        string newName = "";
+        newName = currentName.Contains("Throw")
+            ? nameof(PlayerIdleStateWithoutBall)
+            : currentName.Replace("WithBall", "WithoutBall");
         stateHandler.ChangeState(newName);
     }
 

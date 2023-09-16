@@ -75,11 +75,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Vector2 moveDirection = context.ReadValue<Vector2>();
-        // move direction possible values 
-        // 1,0    X right  y rotation of 90
-        //-1,0    X left y rotation of -90
-        //0,1    Z forward y rotation of -180 
-        //0,-1    Z backward  y rotation of 180
+   
         if (moveRelativeTo == null)
         {
             moveRelativeTo = this.transform;

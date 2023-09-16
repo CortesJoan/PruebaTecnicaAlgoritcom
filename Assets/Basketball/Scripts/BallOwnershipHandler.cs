@@ -27,7 +27,7 @@ public class BallOwnershipHandler : MonoBehaviour
    }
    public PlayerBallHandler GetPreviousOwner()
    {
-      return playerOwner;
+      return previousOwner;
    }
 
    private void OnTriggerEnter(Collider other)

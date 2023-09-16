@@ -10,27 +10,28 @@ using UnityEngine.Serialization;
 [AddTypeMenu("PlayerStates/" + nameof(PlayerCatchBallState)), Serializable]
 public class PlayerCatchBallState : IState
 {
+    [FormerlySerializedAs("catchBall")]
     [Header("References")]
-    [SerializeField]
-    private CatchBall catchBall;
+    [SerializeField] private CatchBallInput catchBallInput;
     [SerializeField] private ChangeStateWhenBallCaught changeStateWhenBallCaught;
     [SerializeField] private PlayerBallHandler playerBallHandler;
-    [FormerlySerializedAs("playerTargetGoal")] [SerializeField] private PlayerTargetBasket playerTargetBasket;
+    [SerializeField] private PlayerPossessionCounter playerPossessionCounter;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeReference, SubclassSelector] private IAnimationHandler animationHandler;
 
-    [Header("Config")]
+    [Header("Config")] 
     [SerializeField] private GameObject catchingCamera;
 
-    [Header("Debug")]  
-     private PlayerActions playerActions;
-     private Transform previousCamera;
+    [Header("Debug")] 
+    private PlayerActions playerActions;
+    private Transform previousCamera;
     private GameObject catchedBall;
+    private float timeSinceEnteredState = 0;
 
     public void OnEnterState()
     {
         timeSinceEnteredState = 0;
-        catchedBall = catchBall.GetCaughtBall();
+        catchedBall = catchBallInput.GetCaughtBall();
         playerActions = new PlayerActions();
         playerActions.Enable();
         playerMovement.BlockMovement();
@@ -48,23 +49,21 @@ public class PlayerCatchBallState : IState
     {
         playerBallHandler.GiveBall(catchedBall);
         changeStateWhenBallCaught.OnBallCaught();
-
         playerMovement.UnblockMovement();
+        playerPossessionCounter.OnPossessionStarted();
     }
 
-    private float timeSinceEnteredState = 0;
 
     public void OnUpdateState()
     {
         float currentDuration = animationHandler.GetCurrentAnimationDuration();
 
         timeSinceEnteredState = Mathf.Min(timeSinceEnteredState + Time.deltaTime, currentDuration);
-        if (timeSinceEnteredState == currentDuration)
+        if (timeSinceEnteredState.Equals(currentDuration))
         {
             CatchTheBall();
         }
     }
-
 
     public void OnExitState()
     {
@@ -73,8 +72,5 @@ public class PlayerCatchBallState : IState
         {
             catchingCamera.SetActive(false);
         }
-        
     }
-
- 
 }
