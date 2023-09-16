@@ -4,9 +4,9 @@ using UnityEngine.AddressableAssets;
 public class TrajectorySimulator
 {
     private AssetReference fakeBallReference;
-    private GameObject fakeBallInstance;
-    private Rigidbody fakeBallRigidbody;
-    private LineRenderer fakeBallTrialRenderer;
+    private GameObject trajectoryVisualInstance;
+    private Rigidbody ballRigidbody;
+    private LineRenderer trajectoryVisualLineRenderer;
     private AddressableAssetLoader addressableAssetLoader;
     private Vector3 direction;
     private Transform simulationRelativeTo;
@@ -14,18 +14,18 @@ public class TrajectorySimulator
     private const int linePoints = 25;
     private const float timeBetweenPoints = 0.1f;
 
-    public TrajectorySimulator(AssetReference fakeBallReference, Transform simulationRelativeTo)
+    public TrajectorySimulator(AssetReference trajectoryVisualAssetReference, Transform simulationRelativeTo,Rigidbody ballRigidbody)
     {
-        addressableAssetLoader = new AddressableAssetLoader(fakeBallReference);
+        addressableAssetLoader = new AddressableAssetLoader(trajectoryVisualAssetReference);
         addressableAssetLoader.LoadAsync(HandleLoadedFakeBall);
         this.simulationRelativeTo = simulationRelativeTo;
+        this.ballRigidbody = ballRigidbody; 
     }
 
     private void HandleLoadedFakeBall(GameObject newFakeBall)
     {
-        fakeBallInstance = newFakeBall;
-        fakeBallTrialRenderer = fakeBallInstance.GetComponent<LineRenderer>();
-        fakeBallRigidbody = fakeBallInstance.GetComponent<Rigidbody>();
+        trajectoryVisualInstance = newFakeBall;
+        trajectoryVisualLineRenderer = trajectoryVisualInstance.GetComponent<LineRenderer>();
     }
 
     public void ThrowRigidbodyInTrajectory(Rigidbody ballRigidbody, float powerRatio,
@@ -41,7 +41,7 @@ public class TrajectorySimulator
     public void DrawTrajectory(Vector3 ballPosition,   float powerRatio,
         float maxThrowingForce = 1000f, LayerMask layerMask = new LayerMask())
     {
-        if (!fakeBallTrialRenderer)
+        if (!trajectoryVisualLineRenderer)
         {
             return;
         }
@@ -49,23 +49,23 @@ public class TrajectorySimulator
         {
             direction = simulationRelativeTo.transform.TransformDirection(Vector3.forward + Vector3.up);
         }
-        fakeBallTrialRenderer.positionCount = 0;
-        fakeBallTrialRenderer.enabled = false;
-        fakeBallTrialRenderer.enabled = true;
-        fakeBallTrialRenderer.positionCount = Mathf.CeilToInt(linePoints / timeBetweenPoints) + 1;
+        trajectoryVisualLineRenderer.positionCount = 0;
+        trajectoryVisualLineRenderer.enabled = false;
+        trajectoryVisualLineRenderer.enabled = true;
+        trajectoryVisualLineRenderer.positionCount = Mathf.CeilToInt(linePoints / timeBetweenPoints) + 1;
         Vector3 startPosition = ballPosition;
-        Vector3 startVelocity = maxThrowingForce * (direction * powerRatio) / fakeBallRigidbody.mass;
+        Vector3 startVelocity = maxThrowingForce * (direction * powerRatio) / ballRigidbody.mass;
         int i = 0;
-        fakeBallTrialRenderer.SetPosition(i, startPosition);
+        trajectoryVisualLineRenderer.SetPosition(i, startPosition);
         for (float time = 0; time < linePoints; time += timeBetweenPoints)
         {
             i++;
             Vector3 point = startPosition + time * startVelocity;
             point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
 
-            fakeBallTrialRenderer.SetPosition(i, point);
+            trajectoryVisualLineRenderer.SetPosition(i, point);
 
-            Vector3 lastPosition = fakeBallTrialRenderer.GetPosition(i - 1);
+            Vector3 lastPosition = trajectoryVisualLineRenderer.GetPosition(i - 1);
 
             if (Physics.Raycast(lastPosition,
                     (point - lastPosition).normalized,
@@ -73,8 +73,8 @@ public class TrajectorySimulator
                     (point - lastPosition).magnitude,
                     layerMask))
             {
-                fakeBallTrialRenderer.SetPosition(i, hit.point);
-                fakeBallTrialRenderer.positionCount = i + 1;
+                trajectoryVisualLineRenderer.SetPosition(i, hit.point);
+                trajectoryVisualLineRenderer.positionCount = i + 1;
                 return;
             }
         }

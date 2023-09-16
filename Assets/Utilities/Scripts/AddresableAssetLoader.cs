@@ -19,7 +19,7 @@ public class AddressableAssetLoader
     {
         this.onLoaded = onLoaded;
         var asyncOperationHandler = assetReference.InstantiateAsync();
-        asyncOperationHandler.Completed += HandleLoadedReference;
+        asyncOperationHandler.Completed += HandleLoadedReference; 
     }
 
     private void HandleLoadedReference(AsyncOperationHandle<GameObject> obj)

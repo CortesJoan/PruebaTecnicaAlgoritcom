@@ -29,6 +29,7 @@ public class PlayerThrowingState : IState
     [SerializeField] private ForceMode throwingForceMode;
     [SerializeField] private GameObject throwingCamera;
     private const float valueToPowerUpEachTime = 0.01f;
+    private const float valueToChangeDirectionEachTime = 0.01f;
     private string stateToReturnOnCancel = nameof(PlayerIdleStateWithBall);
     private string stateToReturnAfterThrowing = nameof(PlayerIdleStateWithoutBall);
 
@@ -42,8 +43,8 @@ public class PlayerThrowingState : IState
         powerBarController.SetCurrentPower(throwingForceClampedAtEnterTheState);
         AddressableAssetLoader addressableAssetLoader = new AddressableAssetLoader(fakeBallReference);
         addressableAssetLoader.LoadAsync(HandleLoadedFakeBall);
-        trajectorySimulator = new TrajectorySimulator(fakeBallReference, playerBallHandler.transform);
         throwingBallRigidbody = playerBallHandler.GetBall().GetComponent<Rigidbody>();
+        trajectorySimulator = new TrajectorySimulator(fakeBallReference, playerBallHandler.transform,throwingBallRigidbody);
         HandleThrowingCamera();
         animationHandler.PlayAnimationState(GetType().Name);
         powerBarCanvas.SetActive(true);
@@ -127,7 +128,7 @@ public class PlayerThrowingState : IState
 
     public void OnDirectionChange(float readValue)
     {
-        trajectorySimulator.ChangeXTrajectory(readValue);
+        trajectorySimulator.ChangeXTrajectory(readValue*valueToChangeDirectionEachTime);
         SimulateTrajectory();
     }
 

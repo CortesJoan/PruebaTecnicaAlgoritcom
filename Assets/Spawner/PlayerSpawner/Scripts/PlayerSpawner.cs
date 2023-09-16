@@ -37,7 +37,7 @@ public class PlayerSpawner : MonoBehaviour, ISpawner
         newPlayer.GetComponent<PlayerTargetBasket>().SetTargetBasket(targetBasket);
         newPlayer.GetComponent<SpawnedBy>().SetSpawner(this);
         newPlayer.transform.position =
-            this.transform.position +  Vector3.right * players.Count;
+            this.transform.position  * players.Count;
         players.Add(newPlayer);
         var playerCanvas = newPlayer.GetComponentsInChildren<Canvas>();
         foreach (var canvas in playerCanvas)

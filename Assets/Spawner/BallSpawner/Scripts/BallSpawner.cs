@@ -35,6 +35,7 @@ public class BallSpawner : MonoBehaviour, ISpawner
     public void OnBallLoaded(GameObject ball)
     {
         ballInstances.Add(ball);
+        ball.transform.position = transform.position;
         ball.GetComponent<SpawnedBy>().SetSpawner(this);
     }
 
